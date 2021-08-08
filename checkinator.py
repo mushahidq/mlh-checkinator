@@ -4,9 +4,23 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+import os
+# import schedule
+from twilio.rest import Client
 
 info_file = open('info.json')
 info = json.load(info_file)
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, auth_token)
+
+messages = "Yay!! Successfully registered for this weeks MLH hackathon!"
+
+recipients = [info['mlh']['mob']]
+
+def send_sms():
+  for number in recipients:
+    message = client.messages.create(body=messages, from_='+15202146801',to=number)
 
 devpost_login = 'https://secure.devpost.com/users/login?ref=top-nav-login'
 devpost_mlh_open = 'https://devpost.com/hackathons?organization=Major%20League%20Hacking&status[]=ope'
@@ -183,4 +197,5 @@ actions.send_keys(Keys.RETURN)
 actions.pause(2)
 actions.perform()
 
+send_sms()
 # driver.quit()
