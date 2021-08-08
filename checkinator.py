@@ -53,7 +53,8 @@ time.sleep(5)
 driver.get(devpost_mlh_open)
 
 time.sleep(2)
-mlh_open = driver.find_element_by_xpath('//*[@id="results-and-filters"]/div[2]/div[2]/div/a')
+# mlh_open = driver.find_element_by_xpath('//*[@id="results-and-filters"]/div[2]/div[2]/div/a')
+mlh_open = driver.find_element_by_xpath('//*[@id="results-and-filters"]/div[2]/div[2]/div[2]/a')
 mlh_open.click()
 
 time.sleep(5)
@@ -93,9 +94,9 @@ reg = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/div[2]/d
 reg.click()
 
 driver.switch_to.window(driver.window_handles[1])
+time.sleep(2)
+driver.find_element_by_xpath('//*[@id="edit_participation_316880"]/div/a').click()
 time.sleep(1)
-# driver.find_element_by_xpath('//*[@id="edit_participation_316880"]/div/a').click()
-# time.sleep(1)
 # driver.find_element_by_xpath('//*[@id="edit_participation_316880"]/fieldset[1]/div/label').click()
 # time.sleep(1)
 # driver.find_element_by_xpath('//*[@id="edit_participation_316880"]/fieldset[2]/div/label').click()
@@ -104,7 +105,7 @@ time.sleep(1)
 # time.sleep(1)
 driver.find_element_by_xpath('//*[@id="edit_participation_316880"]/div[2]/input').click()
 
-# mlh_check_in = 'https://hackp.ac/RoboHacksCheckIn'
+mlh_check_in = 'https://hackp.ac/RoboHacksCheckIn'
 # Check In Form
 driver.get(mlh_check_in)
 time.sleep(10)
