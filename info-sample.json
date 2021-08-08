@@ -1,0 +1,17 @@
+{
+    "devpost": {
+        "user": "email@example.com",
+        "password": "pass"
+    },
+    "mlh": {
+        "user": "email@example.com",
+        "password": "password",
+        "fname": "First Name",
+        "lname": "Last Name",
+        "mob": "mobile no",
+        "discord-username": "Name#000",
+        "country": "India",
+        "linkedin": "Linkedin",
+        "grad-year": "YYYY"
+    }
+}
